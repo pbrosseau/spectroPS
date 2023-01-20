@@ -27,8 +27,4 @@ The ANN is used to characterize the AOPDF transfer function and predict the idea
 The measured spectrum has length n. The ANN accepts a 1D vector, consisting of the measured spectrum concatenated with the desired spectrum, 
 with length 2n. The ANN outputs a 1D vector, corresponding to the amplitude mask, of length n.
 
-![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_predicted_goal.png?raw=true)
-
-![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_predicted_goal.png?raw=true)
-
 Patrick Brosseau 2023/01/20
