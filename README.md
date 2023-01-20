@@ -13,7 +13,7 @@ pulse spectrum without an amplitude mask applied by the AOPDF, 2) calculate a ma
 current spectrum and 3) measure the pulse spectrum with the amplitude mask to confirm that the masked spectrum resembles the
 desired spectrum.
 
-![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_predicted_goal.png?raw=true)
+![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_test_goal.png?raw=true)
 
 This task is complicated by several factors, as the ideal amplitude mask is not exactly equal to the desired spectrum divided by
 the measured un-masked spectrum. First, the AOPDF masks the amplitude rather than the intensity, so the square root of the measured 
@@ -26,5 +26,9 @@ shape of the masked pulse spectrum.
 The ANN is used to characterize the AOPDF transfer function and predict the ideal mask for a given input spectrum and a goal spectrum.
 The measured spectrum has length n. The ANN accepts a 1D vector, consisting of the measured spectrum concatenated with the desired spectrum, 
 with length 2n. The ANN outputs a 1D vector, corresponding to the amplitude mask, of length n.
+
+![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_predicted_goal.png?raw=true)
+
+![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_predicted_goal.png?raw=true)
 
 Patrick Brosseau 2023/01/20
