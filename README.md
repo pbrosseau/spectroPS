@@ -13,6 +13,8 @@ pulse spectrum without an amplitude mask applied by the AOPDF, 2) calculate a ma
 current spectrum and 3) measure the pulse spectrum with the amplitude mask to confirm that the masked spectrum resembles the
 desired spectrum.
 
+![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS predicted goal.png?raw=true)
+
 This task is complicated by several factors, as the ideal amplitude mask is not exactly equal to the desired spectrum divided by
 the measured un-masked spectrum. First, the AOPDF masks the amplitude rather than the intensity, so the square root of the measured 
 spectrum must be used. Secondly, there is generally a slight calibration off-set between the AOPDF wavelength vector and the
