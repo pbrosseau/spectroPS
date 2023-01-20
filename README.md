@@ -14,7 +14,7 @@ current spectrum and 3) measure the pulse spectrum with the amplitude mask to co
 desired spectrum.
 
 ![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_test_goal.png?raw=true)
-Fig. 1: Blue: spectrum of pulse without an amplitude mask and orange: desired pulse spectrum.
+ <br />Fig. 1: Blue: spectrum of pulse without an amplitude mask and orange: desired pulse spectrum.
 
 This task is complicated by several factors, as the ideal amplitude mask is not exactly equal to the desired spectrum divided by
 the measured un-masked spectrum. First, the AOPDF masks the amplitude rather than the intensity, so the square root of the measured 
