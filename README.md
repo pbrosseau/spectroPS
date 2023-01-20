@@ -8,7 +8,7 @@ The AOPDF is a literal black box which shapes the spectral amplitude and phase o
 through the box. The AOPDF software accepts a 1D amplitude mask, generates an acoustic wave corresponding to this amplitude mask,
 and shapes the pulse amplitude through interaction between a generated acoustic wave and the input optical beam.
 
-![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_pulse_shaper_diagram?raw=true)
+![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_pulse_shaper_diagram.png?raw=true)
 
 Generally, one desires the pulse spectrum to have a specific shape, such as a super-Gaussian (Fig. 1, orange line). One would therefore 1) measure the
 pulse spectrum without an amplitude mask applied by the AOPDF (Fig. 1, blue line), 2) calculate a mask by dividing the desired spectrum by the 
