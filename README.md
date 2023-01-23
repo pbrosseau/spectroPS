@@ -29,7 +29,7 @@ The ANN is used to characterize the AOPDF transfer function, F(I,A), and predict
 ![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_NN_diagram.png?raw=true)
  <br />Fig. 3: Neural network input and output in the training stage.
  
- ![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_NN_diagram_prediction.png?raw=true)
+ ![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_NN_diagram_prediction_stage.png?raw=true)
  <br />Fig. 4: Neural network input and output when predicting the amplitude mask.
 
 Fig. 5 shows that, once trained, the ANN can predict the ideal amplitude mask for the input spectrum and goal spectrum in Fig. 2.
