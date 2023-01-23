@@ -24,7 +24,11 @@ spectrometer and AOPDF can have non-linear responses. These three factors make d
 and the calculated mask vector generally differs from the ideal mask vector by some small amount, which could be enough to significantly 
 change the shape of the masked pulse spectrum.
 
-The ANN is used to characterize the AOPDF transfer function, F(I,A), and predict the ideal mask, A, for a given input spectrum, I, and a goal spectrum.
+The ANN is used to characterize the AOPDF transfer function, F(I,A), and predict the ideal mask, A, for a given input spectrum, I, and a desired output spectrum.
+
+![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_NN_diagram.png?raw=true)
+ <br />Fig. 3: Neural network input and output.
+
 Fig. 2 shows that, once trained, the ANN can predict the ideal amplitude mask for the input spectrum and goal spectrum in Fig. 1.
 The shaped output spectrum with the modelled amplitude mask indeed resembles the desired spectrum, as show in Fig. 3.
 
