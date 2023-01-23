@@ -10,8 +10,8 @@ through the box. As shown in Fig. 1, the AOPDF accepts a 1D amplitude mask vecto
 ![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_pulse_shaper_diagram.png?raw=true)
  <br />Fig. 1: Acousto-optic programmable dispersive filter (AOPDF) input and output.
 
-Generally, one desires the pulse spectrum to have a specific shape, such as a super-Gaussian (Fig. 1, orange line). One would therefore 1) measure the
-pulse spectrum without an amplitude mask applied by the AOPDF (Fig. 1, blue line), 2) calculate the mask that would generate the desired pulse spectrum and 3) measure the pulse spectrum with the amplitude mask to confirm that the masked spectrum resembles the desired spectrum.
+Generally, one desires the pulse spectrum to have a specific shape, such as a super-Gaussian (Fig. 2, orange line). One would therefore 1) measure the
+pulse spectrum without an amplitude mask applied by the AOPDF (Fig. 2, blue line), 2) calculate the mask that would generate the desired pulse spectrum and 3) measure the pulse spectrum with the amplitude mask to confirm that the masked spectrum resembles the desired spectrum.
 
 ![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_test_goal.png?raw=true)
  <br />Fig. 2: Blue: spectrum of pulse without an amplitude mask and orange: desired pulse spectrum.
@@ -24,21 +24,24 @@ spectrometer and AOPDF can have non-linear responses. These three factors make d
 and the calculated mask vector generally differs from the ideal mask vector by some small amount, which could be enough to significantly 
 change the shape of the masked pulse spectrum.
 
-The ANN is used to characterize the AOPDF transfer function, F(I,A), and predict the ideal mask, A, for a given input spectrum, I, and a desired output spectrum.
+The ANN is used to characterize the AOPDF transfer function, F(I,A), and predict the ideal mask, A, for a given input spectrum, I, and a desired output spectrum. The ANN is trained by sending input spectra through the pulse shaper using an estimated amplitude mask and measuring the pulse shaper output. This creates a triad of 1D vectors: the input spectrum, the pulse shaper output spectrum and the corresponding amplitude mask. The ANN is trained with a concatenation of the input and output vectors as the ANN input and the amplitude mask as the labelled output. After training, the ANN can take a concatenation of the input spectrum and the desired spectrum and output the corresponding mask.
 
 ![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_NN_diagram.png?raw=true)
- <br />Fig. 3: Neural network input and output.
+ <br />Fig. 3: Neural network input and output in the training stage.
+ 
+ ![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_NN_diagram_prediction.png?raw=true)
+ <br />Fig. 4: Neural network input and output when predicting the amplitude mask.
 
-Fig. 2 shows that, once trained, the ANN can predict the ideal amplitude mask for the input spectrum and goal spectrum in Fig. 1.
-The shaped output spectrum with the modelled amplitude mask indeed resembles the desired spectrum, as show in Fig. 3.
+Fig. 5 shows that, once trained, the ANN can predict the ideal amplitude mask for the input spectrum and goal spectrum in Fig. 2.
+The shaped output spectrum with the modelled amplitude mask indeed resembles the desired spectrum, as show in Fig. 6.
 
 ![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_masks.png?raw=true)
- <br />Fig. 3: Blue: the ideal amplitude mask to transform the input pulse into the desired pulse and orange: the ANN predicted amplitude mask.
+ <br />Fig. 5: Blue: the ideal amplitude mask to transform the input pulse into the desired pulse and orange: the ANN predicted amplitude mask.
 
 ![alt text](https://github.com/pbrosseau/spectroPS/blob/main/spectroPS_predicted_goal.png?raw=true)
- <br />Fig. 4: Blue: spectrum of shaped pulse with the ideal amplitude mask and orange: spectrum of shaped pulse with the ANN predicted amplitude mask.
+ <br />Fig. 6: Blue: spectrum of shaped pulse with the ideal amplitude mask and orange: spectrum of shaped pulse with the ANN predicted amplitude mask.
 
 The measured spectrum has length n. The ANN accepts a 1D vector, consisting of the measured spectrum concatenated with the desired spectrum, 
 with length 2n. The ANN outputs a 1D vector, corresponding to the amplitude mask, of length n.
 
-Patrick Brosseau 2023/01/20
+Patrick Brosseau 2023/01/23
