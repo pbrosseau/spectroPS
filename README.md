@@ -44,4 +44,6 @@ The shaped output spectrum with the modelled amplitude mask indeed resembles the
 The measured spectrum has length n. The ANN accepts a 1D vector, consisting of the measured spectrum concatenated with the desired spectrum, 
 with length 2n. The ANN outputs a 1D vector, corresponding to the amplitude mask, of length n.
 
+The simulated spectral data in fiber_spectrum_130to170.npz is generated using a package developed in the Kambhampati lab at McGill University: https://github.com/ry-dgel/self-phase
+
 Patrick Brosseau 2023/01/23
